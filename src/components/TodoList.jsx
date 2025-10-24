@@ -8,7 +8,7 @@ const TodoList = ({ todos, handleComplete }) => {
           <p>
             {todo.text}{" "}
             {todo.completed ? (
-              <span>(Completed)</span>
+              <span>Completed</span>
             ) : (
               <button onClick={() => handleComplete(todo.id)}>Complete</button>
             )}
