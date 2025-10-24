@@ -3,14 +3,14 @@ import "../styles/App.css";
 import TodoList from "./TodoList";
 
 const App = () => {
-  // Step 1: Initialize todos in parent
+  // Parent state (todos)
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Practice JavaScript", completed: false },
     { id: 3, text: "Build Projects", completed: false },
   ]);
 
-  // Step 2: Handler to mark todo as completed
+  // Handler to mark a todo as completed
   const handleComplete = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
@@ -20,12 +20,13 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h2>Todo List (Lifting State Up Example)</h2>
-      {/* Step 3: Pass data + handler to child */}
+    <div>
+      {/* Do not remove this main div */}
+      <h1>Todo App</h1>
       <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
 };
 
 export default App;
+
